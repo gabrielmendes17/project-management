@@ -8,7 +8,6 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @ServletComponentScan
 public class MainServer  {
 
-//    Criar entidade e implementar os relacionamentos.
 //    Salvar um projeto.
 //    Criar validacoes e regras para salvar o projeto.
 //    Criar listagem dinamica de projetos do banco de dados.
