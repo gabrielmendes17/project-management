@@ -1,4 +1,4 @@
 package br.com.biblioteca.models;
 
-public class Membros {
+public class Membro {
 }
