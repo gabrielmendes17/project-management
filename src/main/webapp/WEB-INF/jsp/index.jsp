@@ -9,34 +9,130 @@
 
     <title>Desafio Java</title>
 
-    <link href="<c:url value="/static/node_modules/bootstrap/dist/css/bootstrap.min.css"/>"
-          rel="stylesheet">
+    <link href="<c:url value="/static/node_modules/bootstrap/dist/css/bootstrap.min.css"/>"rel="stylesheet">
+    <link href="<c:url value="/static/node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css"/>"rel="stylesheet">
 
 </head>
 <body>
 </body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+<div class="container-fluid">
+    <h2 class="text-center">Gerenciamento de Projetos</h2>
+    <p class="datatable design text-center">Gerenciamento de Projetos</p>
+    <div class="row">
+      <div class="container">
+        <div class="btnAdd">
+          <a href="#!" data-id="" data-bs-toggle="modal" data-bs-target="#addProjectModal" class="btn btn-success btn-sm">Add Project</a>
         </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <table id="example" class="table">
+              <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>InitialDate</th>
+                <th>ResponsibleManager</th>
+                <th>RealEndDate</th>
+                <th>TotalBudget</th>
+                <th>Description</th>
+                <th>Status</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tiger Nixon</td>
+                  <td>System Architect</td>
+                  <td>Edinburgh</td>
+                  <td>61</td>
+                  <td>2011-04-25</td>
+                  <td>$320,800</td>
+                  <td>System Architect</td>
+                  <td>Edinburgh</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
     </div>
-</nav>
+  </div>
+<!-- Add project Modal 
+nome, dados de início, gerente responsável, previsão de termos, dados reais de termos, orçamento total, descrição e status
+-->
+  <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Project</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addProject" action="projectServletController" method="post">
+            <div class="mb-3 row">
+              <label for="addNameField" class="col-md-3 form-label">Name</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="addNameField" name="Name">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="addInitialDateField" class="col-md-3 form-label">Initial date</label>
+              <div class="col-md-9">
+                <input id="addInitialDateField" name="InitialDate" class="form-control" type="date" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="addResponsibleManagerField" class="col-md-3 form-label">Manager</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="addResponsibleManagerField" name="ResponsibleManager">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="addRealEndDateField" class="col-md-3 form-label">Real end date</label>
+              <div class="col-md-9">
+                <input id="addRealEndDateField" name="RealEndDate" class="form-control" type="date" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="addTotalBudgetField" class="col-md-3 form-label">TotalBudget</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="addTotalBudgetField" name="TotalBudget">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="addDescriptionField" class="col-md-3 form-label">Description</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="addDescriptionField" name="Description">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="addStatusField" class="col-md-3 form-label">Status</label>
+              <div class="col-md-9">
+                <select class="form-select mb-3" id="addStatusField" name="Status" aria-label="Select example">
+                  <option selected>Select a Status</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
+  <script>
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+  </script>
+<script type="text/javascript" src="static/node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 <script src="<c:url value="/static/node_modules/bootstrap/dist/js/bootstrap.min.js"/>"></script>
 </html>
