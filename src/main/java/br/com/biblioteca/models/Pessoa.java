@@ -1,4 +1,4 @@
-package br.com.biblioteca.models
+package br.com.biblioteca.models;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -36,7 +36,7 @@ public class Pessoa implements Serializable {
     private String cpf;
 
     @OneToOne(mappedBy = "gerenteResponsavel")
-    private Optional<Projeto> projetoParaGerenciar;
+    private Projeto projetoParaGerenciar;
 
     @ManyToMany(mappedBy = "pessoas")
     private List<Projeto> projetos;

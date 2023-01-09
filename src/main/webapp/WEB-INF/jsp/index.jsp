@@ -30,9 +30,9 @@
                      <thead>
                         <th>Id</th>
                         <th>Nome</th>
-                        <th>Data Inicial</th>
-                        <th>Gerente responsável</th>
-                        <th>Data fim real</th>
+                        <th>Inicio</th>
+                        <th>Gerente</th>
+                        <th>Fim</th>
                         <th>Orçamento</th>
                         <th>Descriçao</th>
                         <th>Status</th>
@@ -63,43 +63,43 @@
       <div class="modal-dialog">
          <div class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Add Project</h5>
+               <h5 class="modal-title" id="exampleModalLabel">Adicionar Projeto</h5>
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                <form id="addProject" action="projectServletController" method="post">
                   <div class="mb-3 row">
-                     <label for="addNameField" class="col-md-3 form-label">Name</label>
+                     <label for="addNameField" class="col-md-3 form-label">Nome</label>
                      <div class="col-md-9">
                         <input type="text" class="form-control" id="addNameField" name="Name">
                      </div>
                   </div>
                   <div class="mb-3 row">
-                     <label for="addInitialDateField" class="col-md-3 form-label">Initial date</label>
+                     <label for="addInitialDateField" class="col-md-3">Data inicial</label>
                      <div class="col-md-9">
                         <input id="addInitialDateField" name="InitialDate" class="form-control" type="date" />
                      </div>
                   </div>
                   <div class="mb-3 row">
-                     <label for="addResponsibleManagerField" class="col-md-3 form-label">Manager</label>
+                     <label for="addResponsibleManagerField" class="col-md-3 form-label">Gerente</label>
                      <div class="col-md-9">
                         <input type="text" class="form-control" id="addResponsibleManagerField" name="ResponsibleManager">
                      </div>
                   </div>
                   <div class="mb-3 row">
-                     <label for="addRealEndDateField" class="col-md-3 form-label">Real end date</label>
+                     <label for="addRealEndDateField" class="col-md-3">Data fim real</label>
                      <div class="col-md-9">
                         <input id="addRealEndDateField" name="RealEndDate" class="form-control" type="date" />
                      </div>
                   </div>
                   <div class="mb-3 row">
-                     <label for="addTotalBudgetField" class="col-md-3 form-label">TotalBudget</label>
+                     <label for="addTotalBudgetField" class="col-md-3 form-label">Orcamento total</label>
                      <div class="col-md-9">
                         <input type="text" class="form-control" id="addTotalBudgetField" name="TotalBudget">
                      </div>
                   </div>
                   <div class="mb-3 row">
-                     <label for="addDescriptionField" class="col-md-3 form-label">Description</label>
+                     <label for="addDescriptionField" class="col-md-3 form-label">Descricao</label>
                      <div class="col-md-9">
                         <input type="text" class="form-control" id="addDescriptionField" name="Description">
                      </div>
