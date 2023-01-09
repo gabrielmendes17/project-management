@@ -9,16 +9,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 @WebServlet(name = "Servlet" , urlPatterns = {"/projectServletController"})
 public class ProjectServletController extends HttpServlet {
@@ -31,11 +34,6 @@ public class ProjectServletController extends HttpServlet {
 
     @Autowired
     ProjetosRepository projetoRepository;
-
-    @GetMapping("/projectServletController")
-    public String home(Model model, HttpServletRequest httpServletRequest) {
-        return "index";
-    }
 
     @SneakyThrows
     @Override

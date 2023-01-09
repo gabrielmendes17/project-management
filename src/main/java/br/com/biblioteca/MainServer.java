@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @ServletComponentScan
 public class MainServer  {
 
-//    Salvar um projeto.
+//    Passar CPF do responsavel para salvar projeto ou nao ???
 //    Criar validacoes e regras para salvar o projeto.
 //    Criar listagem dinamica de projetos do banco de dados.
 //    Criar edicao de projetos.

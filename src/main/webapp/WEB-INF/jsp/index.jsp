@@ -20,34 +20,46 @@
       <p class="datatable design text-center">Gerenciamento de Projetos</p>
       <div class="row">
          <div class="container">
-            <div class="btnAdd">
-               <a href="#!" data-id="" data-bs-toggle="modal" data-bs-target="#addProjectModal" class="btn btn-success btn-sm">Add Project</a>
+            <div class="row">
+               <div class="col"></div>
+               <div class="btnAdd col">
+                  <a href="#!" data-id="" data-bs-toggle="modal" data-bs-target="#addProjectModal" class="btn btn-success btn-sm">Add Project</a>
+               </div>
+               <div class="col"></div>
+               <div class="col"></div>
+               <div class="col"></div>
             </div>
             <div class="row">
                <div class="col-md-2"></div>
-               <div class="col-md-8">
+               <div class="col-md-10">
                   <table id="example" class="table">
                      <thead>
                         <th>Id</th>
                         <th>Nome</th>
                         <th>Inicio</th>
-                        <th>Gerente</th>
-                        <th>Fim</th>
-                        <th>Orçamento</th>
+                        <th>Previsao Fim</th>
+                        <th>Data Fim</th>
                         <th>Descriçao</th>
                         <th>Status</th>
+                        <th>Orçamento</th>
+                        <th>Risco</th>
+                        <th>Responsavel</th>
                      </thead>
                      <tbody>
-                        <tr>
-                           <td>Tiger Nixon</td>
-                           <td>System Architect</td>
-                           <td>Edinburgh</td>
-                           <td>61</td>
-                           <td>2011-04-25</td>
-                           <td>$320,800</td>
-                           <td>System Architect</td>
-                           <td>Edinburgh</td>
-                        </tr>
+                        <c:forEach var="projeto" items="${listProjeto}">
+                           <tr>
+                              <td><c:out value="${projeto.id}" /></td>
+                              <td><c:out value="${projeto.nome}" /></td>
+                              <td><c:out value="${projeto.dataInicio}" /></td>
+                              <td><c:out value="${projeto.dataPrevisaoFim}" /></td>
+                              <td><c:out value="${projeto.dataFim}" /></td>
+                              <td><c:out value="${projeto.descricao}" /></td>
+                              <td><c:out value="${projeto.status}" /></td>
+                              <td><c:out value="${projeto.orcamento}" /></td>
+                              <td><c:out value="${projeto.risco}" /></td>
+                              <td><c:out value="${projeto.gerenteResponsavel.nome}" /></td>
+                           </tr>
+                        </c:forEach>
                      </tbody>
                   </table>
                </div>
